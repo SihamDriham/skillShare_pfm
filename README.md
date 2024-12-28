@@ -4,6 +4,8 @@ The SkillShare application connects service providers with users, allowing them 
 
 # Software architecture
 
+![architecture](https://github.com/user-attachments/assets/e4a1d9ee-a1ea-4835-b020-f85ac6dd0219)
+
 The application follows a client-server architecture, with the backend server implemented using the Spring Boot framework and the mobile client built for the Android platform. The system facilitates secure and efficient communication between users and the server via REST APIs.
 
 ---
