@@ -50,7 +50,6 @@ Follow these steps to set up and run the SkillShare project locally:
   - [Docker Compose Installation](https://docs.docker.com/compose/install/)
   
 - **JDK 17 or higher:** The backend requires JDK 17 or later.
-  - [JDK Installation](https://adoptopenjdk.net/)
 
 - **Android Studio:** For frontend mobile development, make sure you have Android Studio installed.
   - [Android Studio Installation](https://developer.android.com/studio)
