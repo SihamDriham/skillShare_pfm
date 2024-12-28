@@ -137,6 +137,6 @@ Now your SkillShare full-stack application is up and running locally. If you enc
 ## Video Demonstration
 
 ## Contributors
-- DRIHAM Siham [Github]([https://developer.android.com/studio](https://github.com/SihamDriham))
-- ZENNOURI Nassima [Github]([[https://developer.android.com/studio](https://github.com/SihamDriham)](https://github.com/NassimaZENNOURI))
+- DRIHAM Siham [Github]([https://github.com/SihamDriham])
+- ZENNOURI Nassima [Github]([https://github.com/NassimaZENNOURI])
 
