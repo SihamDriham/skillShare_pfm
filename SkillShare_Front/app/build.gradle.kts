@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
-    id("org.sonarqube") version "6.0.1.5171"
+    //id("org.sonarqube") version "6.0.1.5171"
 }
 
 
@@ -38,14 +38,14 @@ android {
     }
 }
 
-sonarqube {
+/*sonarqube {
     properties {
         property("sonar.projectKey", "skillshare_front")
         property("sonar.projectName", "skillshare_front")
         property("sonar.host.url", "http://localhost:9000")
         property("sonar.token", "sqp_b49c5bccf55458d5059035e3d009141c70bf3e8b")
     }
-}
+}*/
 
 dependencies {
 
