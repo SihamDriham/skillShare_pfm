@@ -29,7 +29,7 @@ The application follows a client-server architecture, with the backend server im
 ---
 # Docker Image
 ```bash
-   version: '3.8'
+version: '3.8'
 services:
   mysql_database:
     image: mysql:8.0
