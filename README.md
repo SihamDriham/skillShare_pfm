@@ -2,6 +2,24 @@
 
 The SkillShare application connects service providers with users, allowing them to discover, book, and review services while managing their profiles. It features a secure, scalable architecture with a RESTful backend, user-friendly interfaces, and real-time notifications for a seamless experience.
 
+## Table of Contents
+
+1. [Introduction](#introduction)  
+2. [Software Architecture](#software-architecture)  
+3. [Docker Image](#docker-image)  
+4. [Frontend Features](#frontend-features)  
+   - [Technologies Used](#1technologies-used)  
+5. [Backend Features](#backend-features)  
+   - [Technologies Used](#1structure)  
+   - [Code Structure](#code-structure)  
+6. [Getting Started](#getting-started)  
+   - [Prerequisites](#prerequisites)  
+   - [Backend Setup](#backend-setup)  
+   - [Frontend Setup](#frontend-setup)  
+   - [Testing the Application](#testing-the-application)  
+7. [Video Demonstration](#video-demonstration)  
+8. [Contributors](#contributors)
+
 # Software architecture
 
 ![architecture](https://github.com/user-attachments/assets/e4a1d9ee-a1ea-4835-b020-f85ac6dd0219)
@@ -116,5 +134,9 @@ Follow these steps to set up and run the SkillShare project locally:
 
 Now your SkillShare full-stack application is up and running locally. If you encounter any issues, check the console logs for error messages, ensure all dependencies are installed, and verify that Docker and the necessary services are running.
 
+## Video Demonstration
 
+## Contributors
+- DRIHAM Siham [Github]([https://developer.android.com/studio](https://github.com/SihamDriham))
+- ZENNOURI Nassima [Github]([[https://developer.android.com/studio](https://github.com/SihamDriham)](https://github.com/NassimaZENNOURI))
 
