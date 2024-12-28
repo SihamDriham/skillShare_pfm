@@ -80,7 +80,7 @@ Follow these steps to set up and run the SkillShare project locally:
    - The Spring Boot backend will automatically start, and the database will be created.
 
 4. **Verify Backend:**
-   - Ensure the backend is running by visiting [http://localhost:8080](http://localhost:8080) in your browser.
+   - Ensure the backend is running.
 
 ---
 
