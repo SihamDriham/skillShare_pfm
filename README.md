@@ -24,8 +24,8 @@ The mobile application features:
 
 # Backend:
 The backend provides a RESTful API with:
-Framework: Spring Boot
-Authentication: Implemented using Spring Security with JWT.
+- Framework: Spring Boot
+- Authentication: Implemented using Spring Security with JWT.
 
 ### 1.Structure:
 The backend code follows a modular and organized structure, leveraging the power of Spring Boot for building a robust and scalable application.
