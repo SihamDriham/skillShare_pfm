@@ -18,7 +18,7 @@ The mobile application features:
 - Feedback System: Write and view feedback for services.
 - Profile Management: Update user information, manage services, and view categories.
 
-# Technologies Used:
+### 1.Technologies Used:
 - Langage : Java.
 - Framework : Android SDK.
 
@@ -27,7 +27,7 @@ The backend provides a RESTful API with:
 Framework: Spring Boot
 Authentication: Implemented using Spring Security with JWT.
 
-# Structure;
+### 1.Structure:
 The backend code follows a modular and organized structure, leveraging the power of Spring Boot for building a robust and scalable application.
 - com.example.application
 Main Application Class: Application.java serves as the entry point for the Spring Boot application. It includes the main method to start the application.
