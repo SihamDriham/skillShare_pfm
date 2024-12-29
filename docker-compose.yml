@@ -23,6 +23,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql_database:3306/skillShare_db
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: 
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     ports:
       - "3600:3600"
     depends_on:
