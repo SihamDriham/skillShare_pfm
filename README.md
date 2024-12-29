@@ -29,38 +29,45 @@ The application follows a client-server architecture, with the backend server im
 ---
 # Docker Image
 ```bash
-version: '3.8'
 services:
   mysql_database:
     image: mysql:8.0
     container_name: mysql_container
-    restart: always
     environment:
       MYSQL_DATABASE: skillShare_db
-      MYSQL_USER: root
-      MYSQL_ROOT_PASSWORD:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+    networks:
+      - app-network
 
   backend:
     build:
       context: ./SkillShare
       dockerfile: Dockerfile
     container_name: backend_container
-    restart: always
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql_database:3306/skillShare_db
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: 
+      SPRING_DATASOURCE_PASSWORD: ""
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     ports:
-      - "3600:3600"
+      - "3601:3600"
     depends_on:
       - mysql_database
+    entrypoint: ["sh", "-c", "while ! nc -z mysql_database 3306; do sleep 2; done; java -jar app.jar"]
+    networks:
+    - app-network
 
 volumes:
   mysql_data:
+
+networks:
+  app-network:
+    driver: bridge
    ```
 ---
 # Frontend:
