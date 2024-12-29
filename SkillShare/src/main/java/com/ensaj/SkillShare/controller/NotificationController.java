@@ -27,12 +27,10 @@ public class NotificationController {
 	
 	@GetMapping("/unread")
     public ResponseEntity<List<Notification>> getUnreadNotifications(@RequestHeader("Authorization") String token) {
-    	// Supprimer "Bearer " du token si présent
         if (token.startsWith("Bearer ")) {
             token = token.substring(7);
         }
 
-        // Extraire l'idUser du token
         int idUser = jwtUtil.extractUserId(token);
         List<Notification> unreadNotifications = notificationService.getUnreadNotifications(idUser);
         return ResponseEntity.ok(unreadNotifications);

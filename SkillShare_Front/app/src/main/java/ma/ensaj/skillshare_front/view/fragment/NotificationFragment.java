@@ -1,6 +1,7 @@
 package ma.ensaj.skillshare_front.view.fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,17 +51,18 @@ public class NotificationFragment extends Fragment {
         viewModel.getNotifications().observe(getViewLifecycleOwner(), new Observer<List<Notification>>() {
             @Override
             public void onChanged(List<Notification> notifications) {
-
                 if (notifications != null && !notifications.isEmpty()) {
+                    Log.d("NotificationFragment", "Notifications observées : " + notifications);
+
                     recyclerView.setVisibility(View.VISIBLE);
-                    adapter = new NotificationAdapter(notifications);
-                    recyclerView.setAdapter(adapter);
+                    adapter.updateNotifications(notifications); // Appelle la méthode de l'adaptateur
                 } else {
                     recyclerView.setVisibility(View.GONE);
                 }
             }
         });
     }
+
 
 
 }

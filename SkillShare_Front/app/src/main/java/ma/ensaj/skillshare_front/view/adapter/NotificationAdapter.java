@@ -43,6 +43,16 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
         return new NotificationAdapter.NotificationViewHolder(view);
     }
 
+    public void updateNotifications(List<Notification> notifications) {
+        if (notifications != null) {
+            this.notificationList.clear(); // Vider l'ancienne liste
+            this.notificationList.addAll(notifications);
+            Log.d("NotificationAdapter", "Notifications mises à jour : " + notifications);// Ajouter les nouvelles notifications
+            notifyDataSetChanged(); // Notifier le RecyclerView des changements
+        }
+    }
+
+
     @Override
     public void onBindViewHolder(@NonNull NotificationAdapter.NotificationViewHolder holder, int position) {
         Notification notification = notificationList.get(position);
@@ -59,6 +69,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
                 .into(holder.imageCreator);
 
         Log.d("Image_Url2",baseUrl);
+        Log.d("NotificationAdapter", "Notification affichée : " + notification);
         try {
             Date date = inputFormat.parse(notification.getDateEnvoie());
             if (date != null) {
@@ -78,6 +89,7 @@ public class NotificationAdapter extends RecyclerView.Adapter<NotificationAdapte
 
     @Override
     public int getItemCount() {
+        Log.d("Size", String.valueOf(notificationList.size()));
         return notificationList.size();
     }
 

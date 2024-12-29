@@ -95,6 +95,4 @@ public class ServicePropose {
 		this.categories = categories;
 	}
 
-	
-
 }

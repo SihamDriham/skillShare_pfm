@@ -48,35 +48,6 @@ public class ServiceService {
         return services;
     }
     
-   /* public List<Map<String, Object>> getAllServices() {
-        List<Object[]> results = serviceRepository.findAllServices();
-        List<Map<String, Object>> services = new ArrayList<>();
-
-        for (Object[] row : results) {
-            // Récupérer le champ statutR
-            Object statutRObject = row[7]; // Le champ statutR (boolean)
-
-            // Vérifier si statutRObject est de type Boolean et récupérer sa valeur
-            boolean statutR = false;  // Valeur par défaut
-            if (statutRObject != null && statutRObject instanceof Boolean) {
-                statutR = (Boolean) statutRObject;  // Cast vers Boolean
-            }  // Valeur par défaut
-
-            services.add(Map.of(
-                "idService", row[0],
-                "nomService", row[1],
-                "description", row[2],
-                "prix", row[3],
-                "nomUtilisateur", row[4],
-                "prenomUtilisateur", row[5],
-                "nomCategorie", row[6],
-                "statutR", statutR 
-            ));
-        }
-
-        return services;
-    }
-*/
     public List<Map<String, Object>> getAllServices(int idUser) {
         List<Object[]> results = serviceRepository.findAllServicesExcludingUser(idUser);
         List<Map<String, Object>> services = new ArrayList<>();
@@ -106,10 +77,8 @@ public class ServiceService {
     }
 
     public void addService(Map<String, Object> requestBody, int idUser, int idCategorie) {
-        // Créer un objet ServicePropose
         ServicePropose service = new ServicePropose();
 
-        // Récupérer les valeurs du requestBody et les affecter à l'objet service
         service.setNomService((String) requestBody.get("nom_service"));
         service.setDescription((String) requestBody.get("description"));
         Double prixDouble = (Double) requestBody.get("prix");
@@ -130,20 +99,6 @@ public class ServiceService {
     public void deleteService(int idService) {
         serviceRepository.deleteById(idService);
     }
-
-    /*public void updateService(int idService , ServicePropose service) {
-        Optional<ServicePropose> existingService = serviceRepository.findById(idService);
-        if (existingService.isPresent()) {
-            ServicePropose s = existingService.get();
-            s.setNomService(service.getNomService());
-            s.setDescription(service.getDescription());
-            s.setPrix(service.getPrix());
-            System.out.println("l'id categorie : " + service.getCategories());
-            s.setCategories(service.getCategories());
-            serviceRepository.save(s);
-        }
-    }
-*/
 
     public void updateService(int idService, ServicePropose service) {
         Optional<ServicePropose> existingService = serviceRepository.findById(idService);

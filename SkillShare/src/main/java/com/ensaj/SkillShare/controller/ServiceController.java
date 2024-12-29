@@ -32,12 +32,10 @@ public class ServiceController {
     @GetMapping("/allServices")
     public ResponseEntity<List<Map<String, Object>>> getAllServices(
     		@RequestHeader("Authorization") String token) {
-    	// Supprimer "Bearer " du token si présent
         if (token.startsWith("Bearer ")) {
             token = token.substring(7);
         }
 
-        // Extraire l'idUser du token
         int idUser = jwtUtil.extractUserId(token);
     	
 
@@ -52,12 +50,10 @@ public class ServiceController {
             @PathVariable int idCategorie,
             @RequestHeader("Authorization") String token) {
 
-        // Supprimer "Bearer " du token si présent
         if (token.startsWith("Bearer ")) {
             token = token.substring(7);
         }
 
-        // Extraire l'idUser du token
         int idUser = jwtUtil.extractUserId(token);
 
         List<Map<String, Object>> services = serviceService.getAllServicesWithDetails(idCategorie, idUser);
@@ -70,12 +66,10 @@ public class ServiceController {
             @RequestHeader("Authorization") String token,
             @PathVariable int idService) {
 
-        // Supprimer "Bearer " du token si présent
         if (token.startsWith("Bearer ")) {
             token = token.substring(7);
         }
 
-        // Extraire l'idUser du token
         int idUser = jwtUtil.extractUserId(token);
 
         List<Object[]> service = serviceService.getServiceById(idCategorie, idUser, idService);
@@ -125,11 +119,9 @@ public class ServiceController {
             @RequestParam(required = false) String localisation,
             @RequestHeader("Authorization") String token,
             @RequestParam(required = false) String searchText) {
-    	// Supprimer "Bearer " du token si présent
         if (token.startsWith("Bearer ")) {
             token = token.substring(7);
         }
-        // Extraire l'idUser du token
         int idUser = jwtUtil.extractUserId(token);    
         System.out.println("localisation"+localisation);
         List<Map<String, Object>> services = serviceService.searchServices(minPrix, maxPrix, categorie, localisation, idUser, searchText);
@@ -140,11 +132,9 @@ public class ServiceController {
     public ResponseEntity<List<Map<String, Object>>> searchServiceByText(
             @RequestHeader("Authorization") String token,
             @RequestParam(required = false) String searchText) {
-    	// Supprimer "Bearer " du token si présent
         if (token.startsWith("Bearer ")) {
             token = token.substring(7);
         }
-        // Extraire l'idUser du token
         int idUser = jwtUtil.extractUserId(token);    
         List<Map<String, Object>> services = serviceService.searchServiceByText(idUser, searchText);
         return ResponseEntity.ok(services);

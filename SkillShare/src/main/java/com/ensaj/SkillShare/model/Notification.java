@@ -17,12 +17,10 @@ public class Notification {
     private LocalDateTime dateEnvoie;
     private boolean statut;
 
-    // Première clé étrangère : le créateur du feedback
     @ManyToOne
     @JoinColumn(name = "idCreateur", referencedColumnName = "idUser")
     private Utilisateur createur;
 
-    // Deuxième clé étrangère : le destinataire du feedback
     @ManyToOne
     @JoinColumn(name = "idDestinataire", referencedColumnName = "idUser")
     private Utilisateur destinataire;

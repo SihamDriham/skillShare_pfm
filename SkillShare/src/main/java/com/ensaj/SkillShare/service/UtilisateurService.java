@@ -24,7 +24,6 @@ import java.util.Optional;
         private PasswordEncoder passwordEncoder;
 
         @Autowired
-        //Permet de vérifier si les identifiants (email et mot de passe) sont corrects.
         private AuthenticationManager authenticationManager;
 
         @Autowired
@@ -33,8 +32,6 @@ import java.util.Optional;
         public AuthResponse authenticate(AuthRequest request) {
             Optional<Utilisateur> utilisateur = utilisateurRepository.findByEmail(request.getEmail());
             authenticationManager.authenticate(
-                    //Crée un objet avec ton email et ton mot de passe.
-                    //Envoie cet objet à Spring Security pour vérifier les informations.
                     new UsernamePasswordAuthenticationToken(request.getEmail(), request.getMotDePasse())
             );
 

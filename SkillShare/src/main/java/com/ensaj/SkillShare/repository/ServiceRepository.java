@@ -27,21 +27,6 @@ public interface ServiceRepository extends JpaRepository<ServicePropose, Integer
             "WHERE c.idCategorie = :idCategorie AND u.idUser = :idUser AND sp.idService =:idService")
     List<Object[]> findAllServicesByCategoryAndUserAndId(@Param("idCategorie") int idCategorie,
                                                                    @Param("idUser") int idUser, @Param("idService") int idService);
-
-    /*@Query("SELECT s FROM ServicePropose s JOIN s.utilisateur u WHERE " +
-                                                                   "ST_Distance_Sphere(point(u.longitude, u.latitude), " +
-                                                                   "point(?1, ?2)) <= ?3")
-   List<ServicePropose> findNearbyServices(double longitude, double latitude, double radiusInMeters);*/
-
-    
-   /* @Query("SELECT sp.idService, sp.nomService, sp.description, sp.prix, " +
-    	       "u.nom, u.prenom, c.categorie, r.statutR " +
-    	       "FROM ServicePropose sp " +
-    	       "JOIN sp.utilisateur u " +
-    	       "JOIN sp.categories c " +
-    	       "LEFT JOIN sp.reservations r") 
-    	List<Object[]> findAllServices();
-*/
     
     @Query("SELECT sp.idService, sp.nomService, sp.description, sp.prix, " +
             "u.nom, u.prenom, u.localisation, u.image, c.categorie " +

@@ -85,27 +85,5 @@ public class Utilisateur {
 		this.noteMoyenne = noteMoyenne;
 	}
 
-	/*public List<ServicePropose> getServicesProposes() {
-		return servicesProposes;
-	}
-
-	public void setServicesProposes(List<ServicePropose> servicesProposes) {
-		this.servicesProposes = servicesProposes;
-	}*/
-
-	
-
-   /* @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
-    private List<Notification> notifications;
-
-     @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
-    private List<Feedback> feedbacks;
-
-    @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
-    private List<Reservation> reservations;
-
-    @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
-    private List<ServicePropose> servicesProposes;*/
-
 
 }

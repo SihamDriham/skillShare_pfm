@@ -14,15 +14,12 @@ public class Reservation {
     private int idReser;
 
 	private LocalDateTime dateHeure;
-    //private boolean statut;
     private String statut;
 
-	// Première clé étrangère : le créateur du feedback
     @ManyToOne
     @JoinColumn(name = "idCreateur", referencedColumnName = "idUser")
     private Utilisateur createur;
 
-    // Deuxième clé étrangère : le destinataire du feedback
     @ManyToOne
     @JoinColumn(name = "idDestinataire", referencedColumnName = "idUser")
     private Utilisateur destinataire;
@@ -47,8 +44,6 @@ public class Reservation {
 	public void setDateHeure(LocalDateTime dateHeure) {
 		this.dateHeure = dateHeure;
 	}
-
-	
 
 	public Utilisateur getCreateur() {
 		return createur;
