@@ -18,25 +18,22 @@ public class FeedBackController {
     @Autowired
     private FeedbackService feedbackService;
     @Autowired
-    private JwtUtil jwtUtil; // Utilitaire pour extraire les informations du token JWT
+    private JwtUtil jwtUtil; 
 
     @PostMapping("/add/{idServicePropose}")
     public ResponseEntity<String> addFeedback(
-            @RequestHeader("Authorization") String token, // Le token JWT envoyé par l'utilisateur
-            @PathVariable int idServicePropose, // L'ID du service proposé dans l'URL
-            @RequestBody Feedback feedbackRequest // Le JSON envoyé dans le corps de la requête
+            @RequestHeader("Authorization") String token, 
+            @PathVariable int idServicePropose, 
+            @RequestBody Feedback feedbackRequest 
     ) {
         try {
-        // Vérification que le token commence bien par "Bearer "
         if (token.startsWith("Bearer ")) {
-            token = token.substring(7); // Retirer le préfixe "Bearer "
+            token = token.substring(7); 
         } else {
             throw new IllegalArgumentException("Le token doit commencer par 'Bearer '");
         }
-         // Extraire l'ID du créateur depuis le token
          int idCreateur = jwtUtil.extractUserId(token);
          
-         // Ajouter le feedback
          feedbackService.addFeedback(
                  feedbackRequest.getNote(),
                  feedbackRequest.getCommentaire(),
@@ -58,7 +55,7 @@ public class FeedBackController {
             }
             return ResponseEntity.ok(feedbacks);
         } catch (Exception e) {
-            e.printStackTrace(); // Pour afficher les erreurs dans les logs
+            e.printStackTrace(); 
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
     }

@@ -31,10 +31,4 @@ public class Categorie {
 		this.categorie = categorie;
 	}
 
-
-	
-
-   /* @OneToMany(mappedBy = "idService", cascade = CascadeType.ALL)
-    private List<ServicePropose> services;*/
-
 }

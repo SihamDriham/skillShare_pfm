@@ -15,9 +15,6 @@ import org.springframework.data.repository.query.Param;
 
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, Integer>{
-
-	 // Trouver les réservations reçues par un utilisateur (destinataire)
-	 //List<Reservation> findByDestinataire_IdUser(int idDestinataire);
 	
 	 @Query("SELECT CASE WHEN COUNT(r) > 0 THEN true ELSE false END " +
 		       "FROM Reservation r " +

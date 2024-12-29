@@ -75,12 +75,10 @@ public class Feedback {
 	@Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
-    // Première clé étrangère : le créateur du feedback
     @ManyToOne
     @JoinColumn(name = "idCreateur", referencedColumnName = "idUser")
     private Utilisateur createur;
 
-    // Deuxième clé étrangère : le destinataire du feedback
     @ManyToOne
     @JoinColumn(name = "idDestinataire", referencedColumnName = "idUser")
     private Utilisateur destinataire;
@@ -88,4 +86,5 @@ public class Feedback {
     @ManyToOne
     @JoinColumn(name = "idService")
     private ServicePropose service;
+    
 }
