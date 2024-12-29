@@ -182,4 +182,5 @@ https://github.com/user-attachments/assets/5034e09e-93fb-4fb1-bc5d-d1f5c7685b85
 ## Contributors
 - DRIHAM Siham [Github](https://github.com/SihamDriham)
 - ZENNOURI Nassima [Github](https://github.com/NassimaZENNOURI)
+- LACHGAR Mohammed [ResearchGate](https://www.researchgate.net/profile/Mohamed-Lachgar)
 
