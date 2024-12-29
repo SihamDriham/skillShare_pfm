@@ -168,6 +168,9 @@ Follow these steps to set up and run the SkillShare project locally:
 Now your SkillShare full-stack application is up and running locally. If you encounter any issues, check the console logs for error messages, ensure all dependencies are installed, and verify that Docker and the necessary services are running.
 
 ## Video Demonstration
+https://github.com/user-attachments/assets/5034e09e-93fb-4fb1-bc5d-d1f5c7685b85
+
+---
 
 ## Contributors
 - DRIHAM Siham [Github](https://github.com/SihamDriham)
